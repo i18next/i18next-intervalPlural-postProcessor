@@ -8,7 +8,7 @@ Source can be loaded via [npm](https://www.npmjs.com/package/i18next-intervalPlu
 
 ```
 # npm package
-$ npm install i18next-intervalPlural-postProcessor
+$ npm install i18next-intervalplural-postprocessor
 
 # bower
 $ bower install i18next/i18next-intervalPlural-postProcessor
