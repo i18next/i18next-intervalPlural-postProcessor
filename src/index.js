@@ -1,0 +1,60 @@
+function intervalMatches(interval, count) {
+  if (interval.indexOf('-') > -1) {
+    var p = interval.split('-');
+    if (p[1] === 'inf') {
+      const from = parseInt(p[0], 10);
+      return count >= from;
+    } else {
+      const from = parseInt(p[0], 10);
+      const to = parseInt(p[1], 10);
+      return count >= from && count <= to;
+    }
+  } else {
+    const match = parseInt(interval, 10);
+    return match === count;
+  }
+}
+
+
+export default {
+  name: 'interval',
+  type: 'postProcessor',
+
+  options: {
+    intervalSeparator: ';',
+    intervalRegex: /^\((\S*)\){(.*)}$/,
+    intervalSuffix: '_interval'
+  },
+
+  setOptions(options) {
+    this.options = {...options, ...this.options};
+  },
+
+  process(value, key, options, translator) {
+    const p = value.split(this.options.intervalSeparator);
+
+    let found;
+    p.forEach((iv) => {
+      if (found) return;
+      let match = this.options.intervalRegex.exec(iv);
+
+      if (match && intervalMatches(match[1], options.count || 0)) {
+        found = match[2];
+      }
+    });
+
+    // not found fallback to classical plural
+    if (!found) {
+      let newOptions = {...{}, ...options};
+      if (typeof newOptions.postProcess === 'string') {
+        delete newOptions.postProcess;
+      } else {
+        const index = newOptions.postProcess.indexOf('interval');    // <-- Not supported in <IE9
+        if (index !== -1) newOptions.postProcess.splice(index, 1);
+      }
+      found = translator.translate(key.replace(this.options.intervalSuffix, ''), newOptions);
+    }
+
+    return found || value;
+  }
+};
