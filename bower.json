@@ -1,5 +1,5 @@
 {
-  "name": "i18nextXHRBackend",
+  "name": "i18next-intervalplural-postprocessor",
   "version": "0.0.6",
   "main": "./bin/index.js",
   "dependencies": {},

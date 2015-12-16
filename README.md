@@ -11,8 +11,10 @@ Source can be loaded via [npm](https://www.npmjs.com/package/i18next-intervalPlu
 $ npm install i18next-intervalplural-postprocessor
 
 # bower
-$ bower install i18next/i18next-intervalPlural-postProcessor
+$ bower install i18next-intervalplural-postprocessor
 ```
+
+- If you don't use a module loader it will be added to window.i18nextIntervalPluralPostProcessor
 
 Wiring up:
 
