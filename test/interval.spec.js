@@ -1,5 +1,6 @@
 import i18next from 'i18next/lib';
 import intervalPostProcessor from '../src/';
+import { expect } from 'chai';
 
 describe('interval plural', () => {
   before(() => {

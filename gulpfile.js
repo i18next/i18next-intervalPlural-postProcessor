@@ -1,4 +1,7 @@
+require("babel-register"); // needed for gulp-mocha
+
 var gulp = require('gulp'),
+    mocha = require('gulp-mocha'),
     rename = require('gulp-rename'),
     babel = require('gulp-babel'),
     prompt = require('gulp-prompt'),
@@ -16,8 +19,9 @@ var gulp = require('gulp'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     babelify = require('babelify'),
-    eslint = require('gulp-eslint'),
-    Server = require('karma').Server;
+    eslint = require('gulp-eslint');
+
+
 
 var pkg = require('./package.json');
 
@@ -32,7 +36,7 @@ function compile(watch) {
   }
 
   function rebundle() {
-    bundler.bundle()
+    return bundler.bundle()
       .on('error', function(err) { console.error(err); this.emit('end'); })
       .pipe(source(output))
       .pipe(buffer())
@@ -49,7 +53,7 @@ function compile(watch) {
     });
   }
 
-  rebundle();
+  return rebundle();
 }
 
 gulp.task('eslint', function () {
@@ -61,25 +65,12 @@ gulp.task('eslint', function () {
     .pipe(eslint.failAfterError());
 });
 
-gulp.task('test', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true,
-    reporters: [ 'spec', 'coverage' ],
-  }, done).start();
-});
-
-gulp.task('test_compat', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.backward.conf.js'
-  }, done).start();
-});
-
-
-gulp.task('tdd', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js'
-  }, done).start();
+gulp.task('test', function () {
+	return gulp.src(['test/*.js'], {read: false})
+		// gulp-mocha needs filepaths so you can't have any plugins before it
+		.pipe(mocha({
+      reporter: 'spec'
+    }));
 });
 
 gulp.task('babel', function () {
@@ -88,7 +79,7 @@ gulp.task('babel', function () {
     .pipe(gulp.dest('./lib'));
 });
 
-gulp.task('rename', function () {
+gulp.task('rename', ['concat', 'babel'], function () {
   return gulp
     .src('./bin/index.js')
     .pipe(rename('./' + standaloneName + '.min.js'))
