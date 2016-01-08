@@ -46,7 +46,7 @@
   },
   "scripts": {
     "tdd": "mocha test/*.js --compilers js:babel-register --watch",
-    "test": "npm run coveralls",
+    "test": "mocha test/*.js --compilers js:babel-register",
     "coverage": "babel-node node_modules/.bin/isparta cover _mocha",
     "coveralls": "npm run coverage && coveralls < coverage/lcov.info"
   },
