@@ -1,90 +1,19 @@
-require("babel-register"); // needed for gulp-mocha
+// plan to drop support for bower
+//
+// use:
+// npm version patch && git push && npm publish
+
 
 var gulp = require('gulp'),
-    mocha = require('gulp-mocha'),
-    rename = require('gulp-rename'),
-    babel = require('gulp-babel'),
     prompt = require('gulp-prompt'),
     git = require('gulp-git'),
     bump = require('gulp-bump'),
     filter = require('gulp-filter'),
     tag_version = require('gulp-tag-version'),
     shell = require('gulp-shell'),
-    argv = require('yargs').argv,
-    gulpif = require('gulp-if'),
-    uglify = require('gulp-uglify'),
-    sourcemaps = require('gulp-sourcemaps'),
-    source = require('vinyl-source-stream'),
-    buffer = require('vinyl-buffer'),
-    browserify = require('browserify'),
-    watchify = require('watchify'),
-    babelify = require('babelify'),
-    eslint = require('gulp-eslint');
-
-
+    argv = require('yargs').argv;
 
 var pkg = require('./package.json');
-
-var entry = 'index.js',
-    standaloneName = 'i18nextIntervalPluralPostProcessor',
-    output = 'index.js';
-
-function compile(watch) {
-  var bundler = browserify('./src/' + entry, { debug: argv.debug, standalone: standaloneName }).transform(babelify);
-  if (watch) {
-    bundle = watchify(bundler);
-  }
-
-  function rebundle() {
-    return bundler.bundle()
-      .on('error', function(err) { console.error(err); this.emit('end'); })
-      .pipe(source(output))
-      .pipe(buffer())
-      .pipe(gulpif(!argv.debug, uglify()))
-      .pipe(gulpif(argv.debug, sourcemaps.init({ loadMaps: true })))
-      .pipe(gulpif(argv.debug, sourcemaps.write('./')))
-      .pipe(gulp.dest('./bin'));
-  }
-
-  if (watch) {
-    bundler.on('update', function() {
-      console.log('-> bundling...');
-      rebundle();
-    });
-  }
-
-  return rebundle();
-}
-
-gulp.task('eslint', function () {
-  return gulp.src(['src/**/*.js'])
-    .pipe(eslint({
-      useEslintrc: true
-    }))
-    .pipe(eslint.format())
-    .pipe(eslint.failAfterError());
-});
-
-gulp.task('test', function () {
-	return gulp.src(['test/*.js'], {read: false})
-		// gulp-mocha needs filepaths so you can't have any plugins before it
-		.pipe(mocha({
-      reporter: 'spec'
-    }));
-});
-
-gulp.task('babel', function () {
-  return gulp.src('./src/**/*.js')
-    .pipe(babel())
-    .pipe(gulp.dest('./lib'));
-});
-
-gulp.task('rename', ['concat', 'babel'], function () {
-  return gulp
-    .src('./bin/index.js')
-    .pipe(rename('./' + standaloneName + '.min.js'))
-    .pipe(gulp.dest('./'));
-});
 
 function inc(version) {
   if (!version) return;
@@ -154,14 +83,6 @@ function inc(version) {
     ]));
 }
 
-function watch() {
-  return compile(true);
-};
-
-gulp.task('concat', function() { return compile(); });
-gulp.task('watch', function() { return watch(); });
 gulp.task('bump', function() { return inc(argv.v); });
 
-gulp.task('default', ['watch']);
-gulp.task('build', ['concat', 'babel', 'rename']);
 gulp.task('publish', ['bump']);
