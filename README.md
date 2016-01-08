@@ -1,5 +1,11 @@
 # Introduction
 
+[![Travis](https://img.shields.io/travis/i18next/i18next-intervalPlural-postProcessor/master.svg?style=flat-square)](https://travis-ci.org/i18next/i18next-intervalPlural-postProcessor)
+[![Coveralls](https://img.shields.io/coveralls/i18next/i18next-intervalPlural-postProcessor/master.svg?style=flat-square)](https://coveralls.io/github/i18next/i18next-intervalPlural-postProcessor)
+[![npm version](https://img.shields.io/npm/v/i18next-intervalplural-postprocessor.svg?style=flat-square)](https://www.npmjs.com/package/i18next-intervalplural-postprocessor)
+[![Bower](https://img.shields.io/bower/v/i18next-intervalplural-postprocessor.svg)]()
+[![David](https://img.shields.io/david/i18next/i18next-intervalPlural-postProcessor.svg?style=flat-square)](https://david-dm.org/i18next/i18next-intervalPlural-postProcessor)
+
 This is a i18next postProcessor enabling interval based plurals.
 
 # Getting started
