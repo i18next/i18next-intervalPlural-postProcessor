@@ -47,7 +47,7 @@
     "publish": "gulp publish",
     "patch": "npm run publish -- -v patch",
     "minor": "npm run publish -- -v minor",
-    "major": "npm run publish -- -v major",
+    "major": "npm run publish -- -v major"
   },
   "author": "Jan Mühlemann <jan.muehlemann@gmail.com> (https://github.com/jamuhl)",
   "license": "MIT"
