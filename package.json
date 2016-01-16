@@ -33,7 +33,7 @@
     "isparta": "4.0.0",
     "mocha": "2.3.4",
     "uglifyify": "3.0.1",
-    "yargs": "3.31.0"
+    "yargs": "3.32.0"
   },
   "scripts": {
     "coverage": "babel-node node_modules/.bin/isparta cover _mocha",
