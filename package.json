@@ -21,7 +21,7 @@
     "chai": "3.5.0",
     "coveralls": "2.11.6",
     "eslint": "1.10.3",
-    "gulp": "3.9.0",
+    "gulp": "3.9.1",
     "gulp-bump": "1.0.0",
     "gulp-filter": "3.0.1",
     "gulp-git": "1.7.0",
