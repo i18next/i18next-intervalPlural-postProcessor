@@ -20,7 +20,7 @@
     "browserify": "13.0.0",
     "chai": "3.5.0",
     "coveralls": "2.11.6",
-    "eslint": "1.10.3",
+    "eslint": "2.0.0",
     "gulp": "3.9.0",
     "gulp-bump": "1.0.0",
     "gulp-filter": "3.0.1",
