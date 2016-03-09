@@ -1,11 +1,10 @@
 {
   "name": "i18next-intervalplural-postprocessor",
-  "version": "0.1.0",
-  "main": "./bin/index.js",
+  "main": "./i18nextIntervalPluralPostProcessor.min.js",
   "dependencies": {},
   "ignore": [
     "test/",
-    "lib/",
+    "dist/",
     "src/",
     "coverage/",
     ".babelrc",

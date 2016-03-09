@@ -1,11 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
-
 function intervalMatches(interval, count) {
   if (interval.indexOf('-') > -1) {
     var p = interval.split('-');
@@ -13,9 +5,9 @@ function intervalMatches(interval, count) {
       var from = parseInt(p[0], 10);
       return count >= from;
     } else {
-      var from = parseInt(p[0], 10);
+      var _from = parseInt(p[0], 10);
       var to = parseInt(p[1], 10);
-      return count >= from && count <= to;
+      return count >= _from && count <= to;
     }
   } else {
     var match = parseInt(interval, 10);
@@ -23,7 +15,7 @@ function intervalMatches(interval, count) {
   }
 }
 
-exports.default = {
+export default {
   name: 'interval',
   type: 'postProcessor',
 
@@ -34,14 +26,14 @@ exports.default = {
   },
 
   setOptions: function setOptions(options) {
-    this.options = _extends({}, options, this.options);
+    this.options = babelHelpers.extends({}, options, this.options);
   },
   process: function process(value, key, options, translator) {
     var _this = this;
 
     var p = value.split(this.options.intervalSeparator);
 
-    var found = undefined;
+    var found = void 0;
     p.forEach(function (iv) {
       if (found) return;
       var match = _this.options.intervalRegex.exec(iv);
@@ -53,7 +45,7 @@ exports.default = {
 
     // not found fallback to classical plural
     if (!found) {
-      var newOptions = _extends({}, options);
+      var newOptions = babelHelpers.extends({}, options);
       if (typeof newOptions.postProcess === 'string') {
         delete newOptions.postProcess;
       } else {
