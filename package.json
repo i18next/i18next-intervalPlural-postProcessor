@@ -1,6 +1,6 @@
 {
   "name": "i18next-intervalplural-postprocessor",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "postProcessor that allows interval based plurals",
   "main": "./index.js",
   "jsnext:main": "dist/es/index.js",
