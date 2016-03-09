@@ -1,4 +1,4 @@
-import i18next from 'i18next/lib';
+import i18next from 'i18next';
 import intervalPostProcessor from '../src/';
 import { expect } from 'chai';
 
