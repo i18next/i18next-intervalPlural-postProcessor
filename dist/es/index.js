@@ -1,3 +1,5 @@
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 function intervalMatches(interval, count) {
   if (interval.indexOf('-') > -1) {
     var p = interval.split('-');
@@ -26,7 +28,7 @@ export default {
   },
 
   setOptions: function setOptions(options) {
-    this.options = babelHelpers.extends({}, options, this.options);
+    this.options = _extends({}, options, this.options);
   },
   process: function process(value, key, options, translator) {
     var _this = this;
@@ -45,7 +47,7 @@ export default {
 
     // not found fallback to classical plural
     if (!found) {
-      var newOptions = babelHelpers.extends({}, options);
+      var newOptions = _extends({}, options);
       if (typeof newOptions.postProcess === 'string') {
         delete newOptions.postProcess;
       } else {
