@@ -27,7 +27,7 @@ export default {
   },
 
   setOptions(options) {
-    this.options = {...options, ...this.options};
+    this.options = {...this.options, ...options};
   },
 
   process(value, key, options, translator) {

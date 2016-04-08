@@ -50,7 +50,7 @@
     },
 
     setOptions: function setOptions(options) {
-      this.options = babelHelpers.extends({}, options, this.options);
+      this.options = babelHelpers.extends({}, this.options, options);
     },
     process: function process(value, key, options, translator) {
       var _this = this;

@@ -28,7 +28,7 @@ export default {
   },
 
   setOptions: function setOptions(options) {
-    this.options = _extends({}, options, this.options);
+    this.options = _extends({}, this.options, options);
   },
   process: function process(value, key, options, translator) {
     var _this = this;
