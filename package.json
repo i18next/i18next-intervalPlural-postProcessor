@@ -27,7 +27,7 @@
     "coveralls": "2.11.6",
     "eslint": "2.2.0",
     "eslint-config-airbnb": "6.0.2",
-    "i18next": "2.3.0",
+    "i18next": "3.0.0",
     "isparta": "4.0.0",
     "mkdirp": "0.5.1",
     "mocha": "2.4.5",
