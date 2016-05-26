@@ -36,7 +36,7 @@
     "rollup-plugin-babel": "2.4.0",
     "rollup-plugin-npm": "1.4.0",
     "rollup-plugin-uglify": "0.2.0",
-    "yargs": "3.32.0"
+    "yargs": "4.2.0"
   },
   "scripts": {
     "tdd": "mocha test/*.js --compilers js:babel-register --watch",
