@@ -26,7 +26,7 @@ Wiring up:
 
 ```js
 import i18next from 'i18next';
-import intervalPlural from 'i18next-intervalPlural-postProcessor';
+import intervalPlural from 'i18next-intervalplural-postprocessor';
 
 i18next
   .use(intervalPlural)
@@ -60,7 +60,7 @@ i18next.t('key2_interval', { postProcess: 'interval', count: 100 }); // -> 100 i
 
 ```js
 import i18next from 'i18next';
-import intervalPlural from 'i18next-intervalPlural-postProcessor';
+import intervalPlural from 'i18next-intervalplural-postprocessor';
 
 intervalPlural.setOptions({
   // this are the defaults
