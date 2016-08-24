@@ -10,10 +10,6 @@
   ],
   "homepage": "https://github.com/i18next/i18next-intervalPlural-postProcessor",
   "bugs": "https://github.com/i18next/i18next-intervalPlural-postProcessor/issues",
-  "dependencies": {
-    "babel": "^6.5.2",
-    "babel-cli": "^6.6.4"
-  },
   "devDependencies": {
     "babel-cli": "6.6.5",
     "babel-core": "6.4.5",
