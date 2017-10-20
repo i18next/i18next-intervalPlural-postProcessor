@@ -52,7 +52,14 @@ export default {
         const index = newOptions.postProcess.indexOf('interval');    // <-- Not supported in <IE9
         if (index !== -1) newOptions.postProcess.splice(index, 1);
       }
-      found = translator.translate(key.replace(this.options.intervalSuffix, ''), newOptions);
+
+      let newKeys;
+      if (typeof key === 'string') {
+        newKeys = key.replace(this.options.intervalSuffix, '')
+      } else if (key.length > -1) {
+        newKeys = key.map((k) => k.replace(this.options.intervalSuffix, ''))
+      }
+      if (newKeys) found = translator.translate(newKeys, newOptions);
     }
 
     return found || value;

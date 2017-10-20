@@ -54,7 +54,16 @@ export default {
         var index = newOptions.postProcess.indexOf('interval'); // <-- Not supported in <IE9
         if (index !== -1) newOptions.postProcess.splice(index, 1);
       }
-      found = translator.translate(key.replace(this.options.intervalSuffix, ''), newOptions);
+
+      var newKeys = void 0;
+      if (typeof key === 'string') {
+        newKeys = key.replace(this.options.intervalSuffix, '');
+      } else if (key.length > -1) {
+        newKeys = key.map(function (k) {
+          return k.replace(_this.options.intervalSuffix, '');
+        });
+      }
+      if (newKeys) found = translator.translate(newKeys, newOptions);
     }
 
     return found || value;
