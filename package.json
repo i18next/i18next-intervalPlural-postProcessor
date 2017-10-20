@@ -1,6 +1,6 @@
 {
   "name": "i18next-intervalplural-postprocessor",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "postProcessor that allows interval based plurals",
   "main": "./index.js",
   "jsnext:main": "dist/es/index.js",
@@ -10,8 +10,7 @@
   ],
   "homepage": "https://github.com/i18next/i18next-intervalPlural-postProcessor",
   "bugs": "https://github.com/i18next/i18next-intervalPlural-postProcessor/issues",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
