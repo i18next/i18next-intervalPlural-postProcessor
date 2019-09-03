@@ -38,6 +38,11 @@ describe('interval plural', () => {
         key4_plural: '{{count}} items',
         key4_interval: '(1){one item}; (2-7){a few items}; '
       });
+      i18next.addResourceBundle('en', 'test4', {
+        LIKE_COUNT: '{{count}} person\nlikes this',
+        LIKE_COUNT_plura: '{{count}} people\nlike this',
+        LIKE_COUNT_interval: "(0){No one\nlikes this};"
+      });
       i18next.setDefaultNamespace('test1');
     });
 
@@ -60,7 +65,9 @@ describe('interval plural', () => {
 
       {args: ['key4_interval', { ns: 'test3', postProcess: 'interval', count: 1}], expected: 'one item'},
       {args: ['key4_interval', { ns: 'test3', postProcess: 'interval', count: 3}], expected: 'a few items'},
-      {args: ['key4_interval', { ns: 'test3', postProcess: 'interval', count: 100}], expected: '100 items'}
+      {args: ['key4_interval', { ns: 'test3', postProcess: 'interval', count: 100}], expected: '100 items'},
+
+      {args: ['LIKE_COUNT_interval', { ns: 'test4', postProcess: 'interval', count: 0}], expected: 'No one\nlikes this'}
     ];
 
     tests.forEach((test) => {
