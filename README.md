@@ -10,7 +10,7 @@ This is a i18next postProcessor enabling interval based plurals.
 
 # Getting started
 
-Source can be loaded via [npm](https://www.npmjs.com/package/i18next-intervalPlural-postProcessor), bower or [downloaded](https://github.com/i18next/i18next-intervalPlural-postProcessor/blob/master/i18nextIntervalPluralPostProcessor.min.js) from this repo.
+Source can be loaded via [npm](https://www.npmjs.com/package/i18next-intervalplural-postprocessor), bower or [downloaded](https://github.com/i18next/i18next-intervalPlural-postProcessor/blob/master/i18nextIntervalPluralPostProcessor.min.js) from this repo.
 
 ```
 # npm package
