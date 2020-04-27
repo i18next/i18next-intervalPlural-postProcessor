@@ -168,7 +168,7 @@ var index = {
 
   options: {
     intervalSeparator: ';',
-    intervalRegex: /\((\S*)\).*{(.*)}/,
+    intervalRegex: /\((\S*)\).*{((.|\n)*)}/,
     intervalSuffix: '_interval'
   },
 
