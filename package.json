@@ -4,6 +4,7 @@
   "description": "postProcessor that allows interval based plurals",
   "main": "./index.js",
   "jsnext:main": "dist/es/index.js",
+  "typings": "./index.d.ts",
   "keywords": [
     "i18next",
     "i18next-postProcessor"
