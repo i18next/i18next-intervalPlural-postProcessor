@@ -65,7 +65,7 @@ import intervalPlural from 'i18next-intervalplural-postprocessor';
 intervalPlural.setOptions({
   // this are the defaults
   intervalSeparator: ';',
-  intervalRegex: /^\((\S*)\){(.*)}$/,
+  intervalRegex: /\((\S*)\).*{((.|\n)*)}/,
   intervalSuffix: '_interval'
 });
 
