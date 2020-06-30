@@ -1,4 +1,6 @@
-# Introduction
+# `i18next-intervalPlural-postProcessor`
+
+## Introduction
 
 [![Travis](https://img.shields.io/travis/i18next/i18next-intervalPlural-postProcessor/master.svg?style=flat-square)](https://travis-ci.org/i18next/i18next-intervalPlural-postProcessor)
 [![Coveralls](https://img.shields.io/coveralls/i18next/i18next-intervalPlural-postProcessor/master.svg?style=flat-square)](https://coveralls.io/github/i18next/i18next-intervalPlural-postProcessor)
@@ -8,11 +10,11 @@
 
 This is a i18next postProcessor enabling interval based plurals.
 
-# Getting started
+## Getting started
 
 Source can be loaded via [npm](https://www.npmjs.com/package/i18next-intervalplural-postprocessor), bower or [downloaded](https://github.com/i18next/i18next-intervalPlural-postProcessor/blob/master/i18nextIntervalPluralPostProcessor.min.js) from this repo.
 
-```
+```sh
 # npm package
 $ npm install i18next-intervalplural-postprocessor
 
@@ -20,7 +22,7 @@ $ npm install i18next-intervalplural-postprocessor
 $ bower install i18next-intervalplural-postprocessor
 ```
 
-- If you don't use a module loader it will be added to window.i18nextIntervalPluralPostProcessor
+- If you don't use a module loader it will be added to `window.i18nextIntervalPluralPostProcessor`
 
 Wiring up:
 
@@ -33,7 +35,7 @@ i18next
   .init(i18nextOptions);
 ```
 
-# usage sample
+## Usage sample
 
 ```js
 // given loaded resources
@@ -56,16 +58,16 @@ i18next.t('key2_interval', { postProcess: 'interval', count: 4 }); // -> a few i
 i18next.t('key2_interval', { postProcess: 'interval', count: 100 }); // -> 100 items
 ```
 
-# setting own options
+## Setting own options
 
 ```js
 import i18next from 'i18next';
 import intervalPlural from 'i18next-intervalplural-postprocessor';
 
 intervalPlural.setOptions({
-  // this are the defaults
+  // these are the defaults
   intervalSeparator: ';',
-  intervalRegex: /^\((\S*)\){(.*)}$/,
+  intervalRegex: /\((\S*)\).*{((.|\n)*)}/,
   intervalSuffix: '_interval'
 });
 
@@ -74,7 +76,7 @@ i18next
   .init(i18nextOptions);
 ```
 
---------------
+---
 
 <h3 align="center">Gold Sponsors</h3>
 
