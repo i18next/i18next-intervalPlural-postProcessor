@@ -6,11 +6,11 @@ interface IntervalPluralOptions {
 	intervalSuffix: string;
 }
 
-const intervalPlural: PostProcessorModule & {
+declare const intervalPlural: PostProcessorModule & {
 	name: 'interval';
 	type: 'postProcessor';
 	options: IntervalPluralOptions;
 	setOptions: (options: Partial<IntervalPluralOptions>) => void;
 };
 
-export default intervalPlural;
+export = intervalPlural;
