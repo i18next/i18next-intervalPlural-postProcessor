@@ -22,7 +22,7 @@ export default {
 
   options: {
     intervalSeparator: ';',
-    intervalRegex: /\((\S*)\).*{((.|\n)*)}/,
+    intervalRegex: /\((\S*)\)((.|\n)*)/,
     intervalSuffix: '_interval'
   },
 
@@ -32,12 +32,12 @@ export default {
 
   process(value, key, options, translator) {
     const p = value.split(this.options.intervalSeparator);
+    console.log(value, p);
 
     let found;
     p.forEach((iv) => {
       if (found) return;
       let match = this.options.intervalRegex.exec(iv);
-
       if (match && intervalMatches(match[1], options.count || 0)) {
         found = match[2];
       }
