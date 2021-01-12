@@ -22,7 +22,7 @@ export default {
 
   options: {
     intervalSeparator: ';',
-    intervalRegex: /\((\S*)\).*{((.|\n)*)}/,
+    intervalRegex: /\((\S*)\).*?\[((.|\n)*)\]/,
     intervalSuffix: '_interval'
   },
 

@@ -42,10 +42,10 @@ i18next
 // translation: {
 //   key1: '{{count}} item',
 //    key1_plural: '{{count}} items',
-//    key1_interval: '(1){one item};(2-7){a few items};(7-inf){a lot of items};',
+//    key1_interval: '(1)[one item];(2-7)[a few items];(7-inf)[a lot of items];',
 //    key2: '{{count}} item',
 //    key2_plural: '{{count}} items',
-//    key2_interval: '(1){one item};(2-7){a few items};'
+//    key2_interval: '(1)[one item];(2-7)[a few items];'
 // }
 
 i18next.t('key1_interval', { postProcess: 'interval', count: 1 }); // -> one item
@@ -67,7 +67,7 @@ import intervalPlural from 'i18next-intervalplural-postprocessor';
 intervalPlural.setOptions({
   // these are the defaults
   intervalSeparator: ';',
-  intervalRegex: /\((\S*)\).*{((.|\n)*)}/,
+  intervalRegex: /\((\S*)\).*?\[((.|\n)*)\]/, // pre 3.0 /\((\S*)\).*{((.|\n)*)}/,
   intervalSuffix: '_interval'
 });
 

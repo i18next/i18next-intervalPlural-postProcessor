@@ -17,31 +17,31 @@ describe('interval plural', () => {
       i18next.addResourceBundle('en', 'test1', {
         key1: '{{count}} item',
         key1_plural: '{{count}} items',
-        key1_interval: '(1){one item};(2-7){a few items};(7-inf){a lot of items};',
+        key1_interval: '(1)[one item];(2-7)[a few items];(7-inf)[a lot of items];',
         key2: '{{count}} item',
         key2_plural: '{{count}} items',
-        key2_interval: '(1){one item};(2-7){a few items};'
+        key2_interval: '(1)[one item];(2-7)[a few items];'
       });
       i18next.addResourceBundle('en', 'test2', {
         key3: '{{count}} item',
         key3_plural: '{{count}} items',
-        key3_interval: '(1){one item};(2-7){a few items};(7-inf){a lot of items};',
+        key3_interval: '(1)[one item];(2-7)[a few items];(7-inf)[a lot of items];',
         key4: '{{count}} item',
         key4_plural: '{{count}} items',
-        key4_interval: '(1){one item};(2-7){a few items};'
+        key4_interval: '(1)[one item];(2-7)[a few items];'
       });
       i18next.addResourceBundle('en', 'test3', {
         key3: '{{count}} item',
         key3_plural: '{{count}} items',
-        key3_interval: '(1) {one item}; (2-7) {a few items}; (7-inf) {a lot of items};',
+        key3_interval: '(1) [one item]; (2-7) [a few items]; (7-inf) [a lot of items];',
         key4: '{{count}} item',
         key4_plural: '{{count}} items',
-        key4_interval: '(1){one item}; (2-7){a few items}; '
+        key4_interval: '(1)[one item]; (2-7)[a few items]; '
       });
       i18next.addResourceBundle('en', 'test4', {
         LIKE_COUNT: '{{count}} person\nlikes this',
         LIKE_COUNT_plura: '{{count}} people\nlike this',
-        LIKE_COUNT_interval: "(0){No one\nlikes this};"
+        LIKE_COUNT_interval: "(0)[No one\nlikes this];"
       });
       i18next.setDefaultNamespace('test1');
     });
