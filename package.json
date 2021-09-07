@@ -9,6 +9,10 @@
     "i18next",
     "i18next-postProcessor"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/i18next/i18next-intervalPlural-postProcessor.git"
+  },
   "homepage": "https://github.com/i18next/i18next-intervalPlural-postProcessor",
   "bugs": "https://github.com/i18next/i18next-intervalPlural-postProcessor/issues",
   "dependencies": {},
