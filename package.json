@@ -33,7 +33,7 @@
     "mkdirp": "0.5.1",
     "mocha": "4.0.1",
     "rimraf": "2.6.2",
-    "rollup": "0.50.0",
+    "rollup": "3.29.5",
     "rollup-plugin-babel": "3.0.2",
     "rollup-plugin-node-resolve": "3.0.0",
     "rollup-plugin-uglify": "2.0.1",
