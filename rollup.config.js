@@ -26,6 +26,6 @@ export default {
     nodeResolve({ jsnext: true })
   ].concat(compress ? uglify() : []),
   moduleName: 'i18nextIntervalPluralPostProcessor',
-  //moduleId: 'i18nextIntervalPluralPostProcessor',
+  // moduleId: 'i18nextIntervalPluralPostProcessor',
   dest
 };
